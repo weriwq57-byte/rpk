@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Цветовые модели: RGB, HSV, LAB</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Интерактивный подбор цвета: RGB &harr; HSV &harr; LAB</h1>
+    <div class="options">
+      <label>
+        Освещение
+        <select id="illum">
+          <option value="D65" selected>D65 — средний дневной свет</option>
+          <option value="D50">D50 — тёплый дневной свет</option>
+          <option value="E">E — равноэнергетический</option>
+        </select>
+      </label>
+      <label>
+        Выход за охват
+        <select id="strategy">
+          <option value="clip" selected>Обрезание (clipping)</option>
+          <option value="scale">Масштабирование (scaling)</option>
+        </select>
+      </label>
+    </div>
+  </header>
+
+  <main>
+    <section id="panels"></section>
+
+    <aside>
+      <div id="preview"></div>
+      <div id="hex">#FF0000</div>
+      <div class="palette-wrap">
+        <button id="paletteBtn" type="button">Выбрать из палитры&hellip;</button>
+        <input type="color" id="colorPicker">
+      </div>
+
+      <div id="warning" class="warning" hidden></div>
+
+    </aside>
+  </main>
+
+  <script src="model.js"></script>
+  <script src="view.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
